@@ -15,19 +15,17 @@ const RegisterUser=new mongoose.Schema({
         type:String,
         required:true,
         trim:true,
-        min:8,
-        max:12,
+        minLength:8,
     },
     profilePic:{
         type:String,
         required:true,
     },
     role:{
-        type:Array, 
-        enum:["admin","user"],
-        default:"user"
+        type:String, 
+        enum:['admin','user'],
     }
 },{timestamps:true})
 
 const registerModel=new mongoose.model("Register",RegisterUser);
-moduleyy.exports=registerModel;
+module.exports=registerModel;
